@@ -15,7 +15,11 @@ def temperature():
     _, temperature = Adafruit_DHT.read_retry(
         Adafruit_DHT.DHT11,
         int(ARGS.dht11_pin),
+        retries=3,
     )
+
+    if temperature is None:
+        raise Exception("No data received from device")
 
     return jsonify({
         'degrees_f': temperature * 1.8 + 32
@@ -27,7 +31,11 @@ def humidity():
     humidity, _ = Adafruit_DHT.read_retry(
         Adafruit_DHT.DHT11,
         int(ARGS.dht11_pin),
+        retries=3,
     )
+
+    if humidity is None:
+        raise Exception("No data received from device")
 
     return jsonify({
         'perecent': humidity,
