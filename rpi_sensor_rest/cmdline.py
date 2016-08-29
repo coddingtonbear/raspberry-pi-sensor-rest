@@ -40,7 +40,7 @@ def humidity():
         raise Exception("No data received from device")
 
     return jsonify({
-        'perecent': humidity,
+        'percent': humidity,
     })
 
 
@@ -95,7 +95,7 @@ def light():
     )
 
     return jsonify({
-        'perecent': value,
+        'percent': value,
     })
 
 
