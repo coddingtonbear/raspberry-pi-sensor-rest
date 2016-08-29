@@ -1,4 +1,5 @@
 import argparse
+import time
 
 import Adafruit_DHT
 from flask import Flask, jsonify
