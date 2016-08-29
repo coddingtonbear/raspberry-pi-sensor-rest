@@ -110,7 +110,7 @@ def main():
     parser.add_argument('--adc-cs-pin', default=None, type=int)
     args = parser.parse_args()
 
-    if args.adc_input_pin:
+    if args.adc_input_pin is not None:
         RPIO.setmode(RPIO.BCM)
         RPIO.setup(args.adc_mosi_pin, RPIO.OUT)
         RPIO.setup(args.adc_miso_pin, RPIO.IN)
