@@ -115,7 +115,7 @@ def main():
         RPIO.setup(args.adc_mosi_pin, RPIO.OUT)
         RPIO.setup(args.adc_miso_pin, RPIO.IN)
         RPIO.setup(args.adc_clk_pin, RPIO.OUT)
-        RPIO.setup(args.cs_pin, RPIO.OUT)
+        RPIO.setup(args.adc_cs_pin, RPIO.OUT)
 
     ARGS = args
 
